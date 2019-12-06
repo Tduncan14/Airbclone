@@ -22,10 +22,10 @@ render(){
   return(
     <Router>
       {/* <Header/> */}
+      <Navbar />
       <Switch>
-        <Route exact path ="/" component={Navbar} />
-        <Route exact path ="/" component={Home} />
-       
+       <Route exact path ="/" component={Home} />
+        {/* <Route path = "/" component ={Navbar} /> */}
       </Switch>
     </Router>
   )
