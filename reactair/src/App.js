@@ -1,12 +1,41 @@
-import React from 'react';
-import './App.css';
+import React,{Component} from 'react';
+import {Link,BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import Home from './pages/Home/Home';
+import Navbar from './utility/Navbar/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      hey
-    </div>
-  );
+
+
+class App extends Component {
+
+
+
+
+
+
+
+
+
+render(){
+
+
+
+  return(
+    <Router>
+      {/* <Header/> */}
+      <Switch>
+        <Route exact path ="/" component={Navbar} />
+        <Route exact path ="/" component={Home} />
+       
+      </Switch>
+    </Router>
+  )
 }
 
-export default App;
+
+
+
+
+}
+
+
+export default App
