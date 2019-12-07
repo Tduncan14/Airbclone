@@ -12,7 +12,11 @@ class SearchBox extends Component {
 
     return(
         <div>
-           <h1> This is the search box;</h1>
+           <div className="home-search-box col m4">
+            <h1>
+                Book unique places to stay and things to do
+            </h1>
+           </div>
         </div>
     )
  }
