@@ -39,10 +39,7 @@ class SearchBox extends Component {
                 <div className="col m12">
 
                   <div className="input-field" id="where" >
-                      <input onChange={this.changeWhere} 
-                      placeholder="Anywhere"
-                      value={this.state.where}
-                      />
+                  <input className="browser-default" onChange={this.changeWhere} placeholder="Anywhere" value={this.state.where} type="text" />
 
                   </div>
                 </div>
