@@ -12,6 +12,7 @@ class SearchBox extends Component {
             where:'',
             checkIn:'',
             checkOut:'',
+            guests:0
           }
       }
 
@@ -40,6 +41,13 @@ class SearchBox extends Component {
 
         this.setState({
             checkOut:event.target.value
+        })
+      }
+
+      changeGuests = (event) =>{
+
+        this.setState({
+           guests:event.target.value
         })
       }
 
@@ -83,6 +91,22 @@ class SearchBox extends Component {
                   <input className="browser-default" onChange={this.changeOut} placeholder="Anyw" value={this.state.checkOut} type="date" />
 
                   </div>
+                </div>
+
+                <div className="col m12">
+                    <div className ="form-label">Guest</div>
+
+                    <div className="input-field" id="where">
+                        <input className="browser-default" onChange={this.changeGuests}
+                        type="number"
+                        placeholder="number of guests" />
+                    </div>
+                    
+                    <div className="col m12 submit-btn">
+                       <div className="input-field" id="submit-btn">
+                         <input className="btn-large waves-effect waves-light red accent-2" type="submit"/>
+                       </div>
+                    </div>
                 </div>
             
             
