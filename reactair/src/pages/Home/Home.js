@@ -1,17 +1,21 @@
-import React from 'react';
+import React ,{Component} from 'react';
 import './home.css'
 import SearchBox from './Searchbox';
+import axios from 'axios'
 
 
 
-
-const Home = () => {
-
+class Home extends Component {
 
 
 
+   componentDidMount(){
 
 
+
+   }
+
+ render(){
     return(
         <div className="container-fluid">
             <div className="row">
@@ -24,6 +28,7 @@ const Home = () => {
        
         </div>
      )
+    }
  }
 
 
