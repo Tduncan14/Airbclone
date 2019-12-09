@@ -40,9 +40,10 @@ class Home extends Component {
      }
 
      const reCities = this.state.cities.map(
-     (city,i) =>(
-          <City city={city} key={i}/> 
-     ))
+     (city,i) =>{
+         return <div className="col s3"><City city={city} key={i}/> 
+         </div> 
+     })
 
 
     return(
