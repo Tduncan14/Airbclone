@@ -3,15 +3,19 @@ import './home.css'
 import SearchBox from './Searchbox';
 import axios from 'axios'
 
+const apiCall='https://airbnb-api.robertbunch.dev'
 
 
 class Home extends Component {
 
+''
 
+    async componentDidMount(){
 
-   componentDidMount(){
+    const recommend =  await axios.get(`${apiCall}/cities/recommended`)
 
-
+    console.log(recommend.data)
+  
 
    }
 
