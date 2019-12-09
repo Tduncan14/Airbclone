@@ -39,7 +39,6 @@ class Home extends Component {
      }
 
 
-     const reCities = <Cities cities={this.state.cities} />
 
     return(
         <div className="container-fluid">
@@ -49,9 +48,9 @@ class Home extends Component {
                         <SearchBox/>
                     </div>
                 </div>
-                {
-                 reCities
-                }
+                <div className ="col s-12">
+                <Cities cities={this.state.cities} />
+               </div>
             </div>
        
         </div>

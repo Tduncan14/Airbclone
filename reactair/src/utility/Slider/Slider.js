@@ -23,6 +23,7 @@ class Slider extends Component {
             slidesToScroll:1
         }
 
+             console.log(this.props.elements,"slider")
         return(
             <div className="slider">
                 <SlickSlider {...settings}>
