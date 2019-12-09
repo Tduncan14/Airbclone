@@ -3,8 +3,7 @@ import './home.css'
 import SearchBox from './Searchbox';
 import axios from 'axios'
 import Spinner from '../../utility/Spinner/Spinner';
-import City from '../../utility/City/City';
-
+import Cities from '../../utility/City/Cities';
 const apiCall='https://airbnb-api.robertbunch.dev'
 
 
@@ -39,12 +38,8 @@ class Home extends Component {
         return <Spinner />
      }
 
-     const reCities = this.state.cities.map(
-     (city,i) =>{
-         return <div className="col s3"><City city={city} key={i}/> 
-         </div> 
-     })
 
+     const reCities = <Cities cities={this.state.cities} />
 
     return(
         <div className="container-fluid">
