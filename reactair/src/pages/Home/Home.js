@@ -3,6 +3,7 @@ import './home.css'
 import SearchBox from './Searchbox';
 import axios from 'axios'
 import Spinner from '../../utility/Spinner/Spinner';
+import City from '../../utility/City/City';
 
 const apiCall='https://airbnb-api.robertbunch.dev'
 
@@ -37,6 +38,13 @@ class Home extends Component {
 
         return <Spinner />
      }
+
+     const reCities = this.state.cities.map(
+     (city,i) =>(
+          <City city={city} key={i}/> 
+     ))
+
+
     return(
         <div className="container-fluid">
             <div className="row">
@@ -45,6 +53,9 @@ class Home extends Component {
                         <SearchBox/>
                     </div>
                 </div>
+                {
+                 reCities
+                }
             </div>
        
         </div>
