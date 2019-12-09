@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import City from './City';
+import SlickSlider from '../Slider/Slider';
 
 
 class Cities extends Component {
@@ -11,7 +12,7 @@ class Cities extends Component {
 
     render(){
         
-    const reCities = this.props.cities.map(
+    const cities = this.props.cities.map(
         (city,i) =>{
             return <div className="col s3"><City city={city} key={i}/> 
             </div> 
@@ -20,7 +21,7 @@ class Cities extends Component {
 
 
        return( <div>
-          {reCities}
+          <SlickSlider elements={cities}/>
         </div>
        )
     }

@@ -1,9 +1,8 @@
 import React,{Component} from 'react';
+import './slider.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import 'slider.css';
 import SlickSlider from 'react-slick';
-
 
 
 class Slider extends Component {
@@ -35,4 +34,4 @@ class Slider extends Component {
 }
 
 
-export default Slider.js
+export default Slider
