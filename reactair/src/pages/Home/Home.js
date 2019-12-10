@@ -41,6 +41,7 @@ class Home extends Component {
 
 
     return(
+        <>
         <div className="container-fluid">
             <div className="row">
                 <div className="home col s12">
@@ -48,12 +49,18 @@ class Home extends Component {
                         <SearchBox/>
                     </div>
                 </div>
-                <div className ="col s-12">
-                <Cities cities={this.state.cities} />
-               </div>
             </div>
        
         </div>
+        <div className="container-fluid lower-fold">
+            <div className="row">
+        <div className ="col s12">
+        <Cities cities={this.state.cities} 
+         header="Recommended Cities for you"/>
+       </div>
+            </div>
+        </div>
+        </>
      )
     }
  }

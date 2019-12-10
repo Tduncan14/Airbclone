@@ -20,10 +20,10 @@ class Cities extends Component {
    
 
 
-       return( <div>
-          <SlickSlider elements={cities}/>
-        </div>
-       )
+       return( <div className="cities-wrapper">
+            <h1 className="main-header-text">{this.props.header}</h1>
+            <SlickSlider elements={cities} />
+        </div>)
     }
 
 

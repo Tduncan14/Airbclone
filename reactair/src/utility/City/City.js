@@ -16,17 +16,17 @@ class City  extends Component {
 
    console.log(this.props.city,'city component')
 
-   const { cityName,image,price} = this.props.city;
+   const { cityName,image,price,id} = this.props.city;
     return(
-        <div className="city col s12">
+      <div className="city col s12">
+   
           <div className="image">
-              <img src={image} alt="city image"/>
+              <img src={image} />
           </div>
-          <div className="city-name">
-              {cityName}
-          </div>
-          <div className="price">${price}/night/day</div>
-        </div>
+          <div className="city-name">{cityName}</div>
+          <div className="price">${price}/night average</div>
+     
+  </div>
     )
   }
 }
