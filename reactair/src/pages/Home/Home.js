@@ -20,7 +20,14 @@ class Home extends Component {
 
     async componentDidMount(){
 
+   const europe = axios.get(`${apiCall}/cities/europe`)
+
+   const asia = axios.get(`${apiCall}/cities/asia`)
+
+   const exotic = axios.get(`${apiCall}/cities/exotic`)
+
     const recommend =  await axios.get(`${apiCall}/cities/recommended`)
+    
 
     console.log(recommend.data)
    
