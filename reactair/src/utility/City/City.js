@@ -21,7 +21,7 @@ class City  extends Component {
       <div className="city col s12">
    
           <div className="image">
-              <img src={image} />
+              <img src={image} alt="cities" />
           </div>
           <div className="city-name">{cityName}</div>
           <div className="price">${price}/night average</div>

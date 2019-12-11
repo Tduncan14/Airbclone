@@ -13,7 +13,10 @@ class Home extends Component {
         super(props)
 
         this.state ={
-            cities:[]
+            cities:[],
+            asia:[],
+            europe:[],
+            exotic:[]
         }
     }
 
@@ -26,21 +29,34 @@ class Home extends Component {
 
    const exotic = axios.get(`${apiCall}/cities/exotic`)
 
-    const recommend =  await axios.get(`${apiCall}/cities/recommended`)
+    const recommend = axios.get(`${apiCall}/cities/recommended`)
+
+
+    const cityPromise = [];
+
+    cityPromise.push(recommend);
+    cityPromise.push(europe);
+    cityPromise.push(asia);
+    cityPromise.push(exotic)
+   
     
 
-    console.log(recommend.data)
-   
-    this.setState({
-        cities:recommend.data
-    })
+    Promise.all(cityPromise)
+.then(values => { 
+  console.log(values);
+})
+.catch(error => { 
+  console.error(error.message)
+});
 
+
+ 
    }
 
  render(){
-     console.log(this.state.cities,'state')
+     console.log(this.state.cities.length,'state')
 
-     if(this.state.cities.length === 0){
+     if(this.state.cities.length === 0 || this.state.cities == false){
 
         return <Spinner />
      }
@@ -62,8 +78,8 @@ class Home extends Component {
         <div className="container-fluid lower-fold">
             <div className="row">
         <div className ="col s12">
-        <Cities cities={this.state.cities} 
-         header="Recommended Cities for you"/>
+        {<Cities cities={this.state.cities} 
+         header="Recommended Cities for you"/>}
        </div>
             </div>
         </div>
