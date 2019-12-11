@@ -14,9 +14,9 @@ class Home extends Component {
 
         this.state ={
             cities:[],
-            asia:[],
-            europe:[],
-            exotic:[]
+            asia:{},
+            europe:{},
+            exotic:{}
         }
     }
 
@@ -48,7 +48,7 @@ class Home extends Component {
     const asia = city[2].data
     const exotic = city[3].data
 
-  console.log(cities,europe,asia,exotic,'cities');
+  console.log(cities,'cities');
 
 
   this.setState({
@@ -68,6 +68,8 @@ class Home extends Component {
    }
 
  render(){
+
+     console.log(this.state.cities,"cities")
      console.log(this.state.cities.length,'state')
 
      if(this.state.cities.length === 0 || this.state.cities == false){
@@ -94,6 +96,21 @@ class Home extends Component {
         <div className ="col s12">
         {<Cities cities={this.state.cities} 
          header="Recommended Cities for you"/>}
+       </div>
+       <div className ="col s12">
+        {<Cities cities={this.state.europe.cities} 
+        header={this.state.europe.header}
+         />}
+       </div>
+       <div className ="col s12">
+        {<Cities cities={this.state.asia.cities}
+          header={this.state.asia.header} 
+       />}
+       </div>
+       <div className ="col s12">
+        {<Cities cities={this.state.exotic.cities}
+           header={this.state.exotic.header}
+        />}
        </div>
             </div>
         </div>
