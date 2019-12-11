@@ -42,8 +42,22 @@ class Home extends Component {
     
 
     Promise.all(cityPromise)
-.then(values => { 
-  console.log(values);
+.then(city => { 
+    const cities = city[0].data
+    const europe = city[1].data
+    const asia = city[2].data
+    const exotic = city[3].data
+
+  console.log(cities,europe,asia,exotic,'cities');
+
+
+  this.setState({
+      cities,
+      europe,
+      asia,
+      exotic
+
+  })
 })
 .catch(error => { 
   console.error(error.message)
