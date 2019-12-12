@@ -14,7 +14,7 @@ class Cities extends Component {
         
     const cities = this.props.cities.map(
         (city,i) =>{
-            return <div className="col s3"><City city={city} key={i}/> 
+            return <div  key={i}className="col s3"><City city={city} key={i}/> 
             </div> 
         })
    

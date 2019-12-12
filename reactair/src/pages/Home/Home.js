@@ -4,6 +4,8 @@ import SearchBox from './Searchbox';
 import axios from 'axios'
 import Spinner from '../../utility/Spinner/Spinner';
 import Cities from '../../utility/City/Cities';
+import Activities from '../../utility/Activity/Activities';
+
 const apiCall='https://airbnb-api.robertbunch.dev'
 
 
@@ -16,7 +18,8 @@ class Home extends Component {
             cities:[],
             asia:{},
             europe:{},
-            exotic:{}
+            exotic:{},
+            activities:[],
         }
     }
 
@@ -63,14 +66,18 @@ class Home extends Component {
   console.error(error.message)
 });
 
+    const activity = `${apiCall}/activities/today`;
 
+    const actcall = await axios.get(activity);
+
+    this.setState({
+        activities:actcall.data
+    })
  
    }
 
  render(){
-
-     console.log(this.state.cities,"cities")
-     console.log(this.state.cities.length,'state')
+     console.log(this.state.activities,"activities")
 
      if(this.state.cities.length === 0 || this.state.cities == false){
 
@@ -96,6 +103,10 @@ class Home extends Component {
         <div className ="col s12">
         {<Cities cities={this.state.cities} 
          header="Recommended Cities for you"/>}
+       </div>
+
+       <div className="col s12">
+           <Activities activities ={this.state.activities} />
        </div>
        <div className ="col s12">
         {<Cities cities={this.state.europe.cities} 

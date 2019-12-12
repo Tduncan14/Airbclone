@@ -8,15 +8,12 @@ class Activities extends Component {
 
 
 
-
-
-
     render(){
-
+       console.log(this.props.activities,"hey")
 
         return(
             <div>
-                Activities
+                <h1>Activities</h1>
             </div>
         )
     }
