@@ -9,11 +9,26 @@ class Activities extends Component {
 
 
     render(){
-       console.log(this.props.activities,"hey")
+
+    //    console.log(this.props.activities,"hey")
+
+    const activities = this.props.activities;
+
+     
+   const act = activities.map((act,index) =>{
+        return(
+            <div className="col s2" key={index}>
+             <Activity activity={act}/>
+            </div>
+        )
+    }
+    )
+
+
 
         return(
-            <div>
-                <h1>Activities</h1>
+            <div className="activities">
+             {act}
             </div>
         )
     }
