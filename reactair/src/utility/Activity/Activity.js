@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './Activity.css';
+import {Link} from 'react-router-dom';
 
 
 class Activity extends Component {
@@ -14,6 +15,7 @@ class Activity extends Component {
         return(
 
           <div className="activity">
+              <Link to ={`/activity/${id}`}>
             <img src={image} alt="image" />
             <div className="activity-type">
             {activityType}</div>
@@ -26,6 +28,7 @@ class Activity extends Component {
             <div className="rating">
                 {rating} ({totalRatings})
             </div>
+            </Link>
           </div> 
         )
     }
